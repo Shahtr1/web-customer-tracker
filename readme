@@ -119,6 +119,9 @@ A  -> Quoting from the JDBC Specification, Chapter 9, Section 2:
 				A call to forName("X") causes the class named X to be initialized.
 			"
 		where initialization involves code in static block to be executed.
+		
+		Class.forName loads the class in JVM, when a class is loaded in memory static block executes
+		
 		So basically, you initialize the Driver class, and in turn the class registers itself with the java.sql.DriverManager per the JDBC specification.
 		
 		Please note, this is not needed anymore
@@ -200,6 +203,12 @@ A	-> We use @Repository annotations to DAO implementations, so
 	Spring also provides translation of any JDBC related exceptions
 		changes checked to unchecked exceptions
 		
+Q12 -> What is the purpose of Service Layer?
+A	-> Service Facade design pattern
+	Intermediate layer for custom business logic
+	Integrate data from multiple sources(DAO/repositories)
+	
+
 
 		
 
